@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Cours - Structure des données</title>
+
+	<link rel="shortcut icon" href="assets/images/logopage.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body>
+	<!-- Barre de navigation -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Menu -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="accueil.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="accueil.html">Accueil</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggles" data-toggle="dropdown">Cours<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="recursivite.html">Récursivité</a></li>
+							<li><a href="structuredesdonnees.html">Structure des données</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggles" data-toggle="dropdown">Entrainements<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="exrecursivite.html">Récursivité</a></li>
+							<li><a href="exstructuredesdonnees.html">Structure des données</a></li>
+							<li><a href="compileur.html">Compileur</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Détente<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="detrecursivite.html">Récursivité</a></li>
+							<li><a href="detstructuredesdonnees.html">Structure des données</a></li>
+						</ul>
+					</li>
+					<li><a href="apropos.html">A propos</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a class="btn" href="connexion.html">Connexion / Inscription</a></li>
+				</ul>
+			</div>
+		</div>
+	</div> 
+
+
+	<header id="head" class="secondary"></header>
+
+	<!-- Page -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="accueil.html">Accueil</a></li>
+			<li class="active">Cours - Structure des données</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Corps de la page -->
+			<article class="col-md-8 maincontent">
+			<div id='sectionAimprimer'>
+				<header class="page-header">
+					<h1 class="page-title">Structure des données - Les arbres</h1>
+				</header>
+				<ul>
+					<blockquote><a href="structuredesdonnees.html#lesbases"><font color="black">- Les bases</font></a></blockquote>
+					<blockquote><a href="structuredesdonnees.html#lesparcours"><font color="black">- Les différents parcours</font></a></blockquote>
+				  </ul>
+				<f><I>(Cliquez pour vous déplacer)</I></f>
+				
+				<div id="lesbases">
+					<h2>Les bases</h2>
+					<p> &emsp; Deux vocabulaires importants :</p>
+					<p><center><img src="assets/images/sdd1.png" alt="" width="400" height="250"></center></p>
+					<p style="color:rgb(33, 165, 33);">&emsp; Un <b>cycle</b></p>
+					<p style="color:rgb(39, 76, 155);">&emsp; Un graphe <b>connexe</b></p>
+					<p><center>--------------------------------------------------------------------------</center></p>
+					<p> &emsp; Quelques mots importants...</p>
+					<p><center><img src="assets/images/sdd2.png" alt="" width="450" height="300"></center></p>
+				
+				</div>
+					<div id="lesparcours">
+					<h2>Les différents parcours</h2>
+					<h3>&emsp;Largeur</h3>
+					<p>&emsp; &emsp; Technique : Il faut lire l'arbre de gauche à droite, de ligne en ligne. </p>
+					<p><center><img src="assets/images/sdd3.png" alt="" width="450" height="300"></center></p>
+					<center><p style="color:rgb(39, 76, 155);"><b>a b f c d g e h i</b></p></center>
+
+					<p><center>--------------------------------------------------------------------------</center></p>
+
+					<h3>&emsp;Infixe</h3>
+					<p>&emsp; &emsp; Technique : Il faut lire le coté gauche de gauche à droite sans se soucier de la hauteur ensuite la racine puis le coté droit de gauche à droite comme le coté gauche. </p>
+					<p><center><img src="assets/images/sdd4.png" alt="" width="450" height="300"></center></p>
+					<center><p style="color:rgb(122, 206, 12);"><b>c e b d a h g i f</b></p></center>
+
+					<p><center>--------------------------------------------------------------------------</center></p>
+
+					<h3>&emsp;Préfixe</h3>
+					<p>&emsp; &emsp; Technique : Il faut commencer à lire par la racine puis toujours suivre le chemin de gauche puis ensuite remonter à droite, ainsi de suite. </p>
+
+					<p><center><img src="assets/images/sdd5.png" alt="" width="450" height="300"></center></p>
+					<center><p style="color:rgb(226, 32, 32);"><b>a b c e d f g h i</b></p></center>
+
+					<p><center>--------------------------------------------------------------------------</center></p>
+
+					<h3>&emsp;Postfixe</h3>
+					<p>&emsp; &emsp; Technique : Il faut commencer à lire tout en bas à gauche ensuite remonter en lisant à gauche puis à droite du noeud et ainsi de suite.</p>
+					<p><center><img src="assets/images/sdd6.png" alt="" width="450" height="300"></center></p>
+					<center><p style="color:rgb(131, 34, 155);"><b>e c d b h i g f a</b></p></center>
+
+					
+				</div>
+				
+			</div>
+				<button onClick="imprimer('sectionAimprimer')">Imprimer le cours</button>
+			</article>
+			
+			
+			<!-- Droite de la page -->
+			<aside class="col-md-4 sidebar sidebar-right">
+				
+				
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Vous avez fini ?</h4>
+						<p>Je vous propose donc de vous entraîner ci-dessous pour voir si vous avez tout bien comprit</p>
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Sous forme d'exercice</h4>
+						<p><a href="exstructuredesdonnees.html"><img src="assets/images/logoexercice.png" alt=""></a></p>
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Sous forme d'un jeu</h4>
+						<p><a href="detstructuredesdonnees.html"> <img src="assets/images/logomotcroise2.png" alt=""></a></p>
+					</div>
+				</div>
+
+			</aside>
+
+		</div>
+	</div>
+	
+
+	<!-- Bas de page-->
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>07 XX XX XX XX
+								<br><br>
+								<a href="mailto:#">theoroy@etud.univ-angers.fr</a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Suivez-moi</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons clearfix">
+								<a href="erreur.html"><i class="fa fa-twitter fa-2"></i></a>
+								<a href="erreur.html"><i class="fa fa-dribbble fa-2"></i></a>
+								<a href="erreur.html"><i class="fa fa-github fa-2"></i></a>
+								<a href="erreur.html"><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Sur moi...</h3>
+						<div class="widget-body">
+							<p>Je m'appelle Théo et je suis un étudiant de deuxième année en classe préparatoire intégrée à l'école de Polytech Angers.</p>
+							<p>Ce projet se fut un plaisir de le faire. Il consistait à faire un compte rendu de mes travaux dirigées réalisés en cours ect...</p>
+							<p><a href="apropos.html">En savoir plus</a></p>
+						</div>
+					</div>
+
+				</div> 
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2020, Roy Théo. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+	<script>
+		function imprimer(divName) {
+			  var printContents = document.getElementById(divName).innerHTML;    
+		   var originalContents = document.body.innerHTML;      
+		   document.body.innerHTML = printContents;     
+		   window.print();     
+		   document.body.innerHTML = originalContents;
+		   }
+		</script>
+</body>
+</html>

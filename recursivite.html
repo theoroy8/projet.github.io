@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Cours - Récursivité</title>
+
+	<link rel="shortcut icon" href="assets/images/logopage.png">
+	
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Template-->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body>
+	<!-- Barre de navigation -->
+	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Menu -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="accueil.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="accueil.html">Accueil</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggles" data-toggle="dropdown">Cours<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="recursivite.html">Récursivité</a></li>
+							<li><a href="structuredesdonnees.html">Structure des données</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggles" data-toggle="dropdown">Entrainements<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="exrecursivite.html">Récursivité</a></li>
+							<li><a href="exstructuredesdonnees.html">Structure des données</a></li>
+							<li><a href="compileur.html">Compileur</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Détente<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="detrecursivite.html">Récursivité</a></li>
+							<li><a href="detstructuredesdonnees.html">Structure des données</a></li>
+						</ul>
+					</li>
+					<li><a href="apropos.html">A propos</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a class="btn" href="connexion.html">Connexion / Inscription</a></li>
+				</ul>
+			</div>
+		</div>
+	</div> 
+	
+
+	<header id="head" class="secondary"></header>
+
+	<!-- Page-->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="accueil.html">Accueil</a></li>
+			<li class="active">Cours - Récursivité</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Corps de la page -->
+			<article class="col-md-8 maincontent">
+			<div id='sectionAimprimer'>
+				<header class="page-header">
+					<h1 class="page-title">Le récursivité</h1>
+				</header>
+				<ul>
+					<blockquote><a href="recursivite.html#iteratif"><font color="black">- Fonction itératif</font></a></blockquote>
+					<blockquote><a href="recursivite.html#nonterminale"><font color="black">- Fonction récursive non terminale</font></a></blockquote>
+					<blockquote><a href="recursivite.html#terminale"><font color="black">- Fonction récursive terminale</font></a></blockquote>
+				  </ul>
+				<f><I>(Cliquez pour vous déplacer)</I></f>
+				
+				<div id="iteratif">
+					<h2>Fonction itérative</h2>
+					<p> &emsp; <b>Itérer</b>, c'est répéter n fois un processus en faisant changer la valeur des variables jusqu'à obtention du résultat.</p>
+					<p>Un calcul itératif se programme par une boucle (<I>for</I> ou <I>while</I>...).</p>
+					<p>Exemple de fonction itératif pour le calcul de factorielle en C</p>
+					<pre>int fact(n) {
+	int i = 0;
+	int result = 1;
+	while (i < n){
+		i = i + 1;
+		result = result ∗ i;
+	}
+	return(result); 
+}</pre>
+				</div>
+					<h2>Fonction récursive</h2>
+					<p> &emsp; Tout d'abord, toute fonction récursive possède un équivalent itératif. Cependant, elle est plus lente que celle-ci.</p>
+					<p>Ensuite, une fonction est dite récursive si elle <b>s'appelle elle-même</b>.</p>
+					<div id="nonterminale">
+					<h3>&emsp;Récursivité non terminale</h3>
+					<p> &emsp;&emsp;&emsp; Une fonction récursive dite <b>non terminale</b>, si le résultat de l'appel récursif est utilisé pour réaliser un traitement. En effet, on utilise la plupart du temps les valeurs précédentes de n pour calculer celle de n.</p>
+					<p>Exemple de fonction récursive non terminale pour le calcul de factorielle en C</p>
+					<pre>int Factorielle(int n){
+	int Z;
+	if (n<1){
+		return 1;
+	}else{
+		Z = Factorielle(n-1);
+		return n*Z;
+	}
+}</pre>
+				</div>
+				<div id="terminale">
+					<h3>&emsp;Récursivité terminale</h3>
+					<p>&emsp;&emsp;&emsp;Une fonction récursive dite <b>terminale</b>, si aucun traitement n'est effectué à la remonté d'un appel récursif.
+					En effet, pour cette fonction, il n'y a pas de besoin des valeurs précédentes de n.</p>
+					<p>Exemple de fonction récursive terminale pour le calcul de factorielle en C</p>
+					<pre>int Factorielle(int n, int acc){
+	if (n<1){
+		return acc;
+	}else{
+		acc = acc*n;
+		return Factorielle(n-1, acc);
+	}
+}</pre>
+
+				</div>
+			</div>
+				<h3>Mise en action de la fonction récursive terminale :</h3>
+				<f><I>Rentrez le n choisi dans "Stdin Inputs"</I></f>
+				<div data-pym-src="https://www.jdoodle.com/embed/v0/2Sd6">
+				</div>
+				<button onClick="imprimer('sectionAimprimer')">Imprimer le cours</button>
+			</article>
+			
+			
+			<!-- Droite de la page -->
+			<aside class="col-md-4 sidebar sidebar-right">
+				
+				
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Vous avez fini ?</h4>
+						<p>Je vous propose donc de vous entraîner ci-dessous pour voir si vous avez tout bien comprit</p>
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Sous forme d'exercice</h4>
+						<p><a href="exrecursivite.html"><img src="assets/images/logoexercice.png" alt=""></a></p>
+					</div>
+				</div>
+				<div class="row widget">
+					<div class="col-xs-12">
+						<h4>Sous forme d'un jeu</h4>
+						<p><a href="detrecursivite.html"> <img src="assets/images/logomotcroise2.png" alt=""></a></p>
+					</div>
+				</div>
+
+			</aside>
+
+		</div>
+	</div>
+	
+	<!-- Bas de page-->
+	<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>07 XX XX XX XX
+								<br><br>
+								<a href="mailto:#">theoroy@etud.univ-angers.fr</a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Suivez-moi</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons clearfix">
+								<a href="erreur.html"><i class="fa fa-twitter fa-2"></i></a>
+								<a href="erreur.html"><i class="fa fa-dribbble fa-2"></i></a>
+								<a href="erreur.html"><i class="fa fa-github fa-2"></i></a>
+								<a href="erreur.html"><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Sur moi...</h3>
+						<div class="widget-body">
+							<p>Je m'appelle Théo et je suis un étudiant de deuxième année en classe préparatoire intégrée à l'école de Polytech Angers.</p>
+							<p>Ce projet se fut un plaisir de le faire. Il consistait à faire un compte rendu de mes travaux dirigées réalisés en cours ect...</p>
+							<p><a href="apropos.html">En savoir plus</a></p>
+						</div>
+					</div>
+
+				</div> 
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-6 widget">
+						
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2020, Roy Théo. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</footer>	
+		
+
+
+
+
+	<!-- JavaScript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+	<script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js"></script>
+	<script>
+		function imprimer(divName) {
+			  var printContents = document.getElementById(divName).innerHTML;    
+		   var originalContents = document.body.innerHTML;      
+		   document.body.innerHTML = printContents;     
+		   window.print();     
+		   document.body.innerHTML = originalContents;
+		   }
+		</script>
+</body>
+</html>
