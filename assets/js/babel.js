@@ -67,14 +67,14 @@ const {
   };
   
   const bootstrapLayers = () => {
-    addParticles(Math.floor(innerWidth / 10), Fours, createText('4'));
-    addParticles(Math.floor(innerWidth / 10), Ohhhs, createText('0'));
-    addParticles(Math.floor(innerWidth / 50), Page, createText('Page non trouvé', { height: FONT_SIZE * 2, width: innerWidth }));
+    addParticles(Math.floor(innerWidth / 10), Fours, createText('...'));
+    addParticles(Math.floor(innerWidth / 30), Ohhhs, createText('Oupss'));
+    addParticles(Math.floor(innerWidth / 30), Page, createText('Page Indisponible', { height: FONT_SIZE * 2, width: innerWidth }));
   };
   
   const Fours = new ParticleContainer(Math.floor(innerWidth / 10), PARTICLE_CONTAINER_OPTS);
   const Ohhhs = new ParticleContainer(Math.floor(innerWidth / 10), PARTICLE_CONTAINER_OPTS);
-  const Page = new ParticleContainer(Math.floor(innerWidth / 50), PARTICLE_CONTAINER_OPTS);
+  const Page = new ParticleContainer(Math.floor(innerWidth / 20), PARTICLE_CONTAINER_OPTS);
   bootstrapLayers();
   
   App.stage.addChild(Fours);
